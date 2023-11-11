@@ -23,4 +23,3 @@ Feature: Test the functionality of the Search Bar
    Scenario: Check the functionality of the redirection to the Cart Page "https://checkout.compari.ro/"
      When I click on the Cart button
      Then I am redirected to the Cart Page "https://checkout.compari.ro/"
- 

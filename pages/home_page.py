@@ -63,27 +63,3 @@ class HomePage(BasePage):
     def test_url(self,):
         current_url = self.current_url()
         return current_url
-
-
-
-
-
-
-
-
-
-"""import re
-
-text = "de la 4 880,00 RON"
-numbers = re.findall(r'\d+', text)
-
-# If you want to join the extracted numbers into a single string
-numbers_string = ''.join(numbers)
-
-# If you want to convert the numbers to an integer or float
-# You need to handle the comma for decimal places
-numbers_float = float(numbers_string.replace(',', '.'))
-
-print(numbers)  # Output: ['4', '880', '00']
-print(numbers_string)  # Output: '488000'
-print(numbers_float)  # Output: 4880.0"""
