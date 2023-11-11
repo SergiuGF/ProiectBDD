@@ -23,3 +23,10 @@ Feature: Test the functionality of the Search Bar
    Scenario: Check the functionality of the redirection to the Cart Page "https://checkout.compari.ro/"
      When I click on the Cart button
      Then I am redirected to the Cart Page "https://checkout.compari.ro/"
+
+    @Comparatie
+   Scenario: Check the functionality of the "Comparatie" button
+     When I click on the "Aparat foto" button
+     When I check "Comparare" checkbox in the first product tab
+     When I click on the "Comparatie" button
+     Then The selected product is displayed

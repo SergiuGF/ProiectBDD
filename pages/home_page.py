@@ -16,12 +16,17 @@ class HomePage(BasePage):
     OK_BUTTON = By.XPATH, '//*[@id="cf_pret"]/span[2]/a'
     PRODUCT_PRICES = By.CLASS_NAME, "price"
     CART_PAGE = By.CSS_SELECTOR, '#header-cart-icon > svg'
-
+    APARAT_FOTO_PAGE = By.LINK_TEXT, 'Aparat foto'
+    COMPARARE_CHECKBOX = By.XPATH, '//*[@id="product-list"]/div[3]/div[1]/div[1]/div[1]/div[2]/a/span[1]'
+    COMPARATIE_BUTTON = By.ID, 'header-button-comparison'
+    SELECTED_PRODUCT = By.CLASS_NAME, 'product-wrapper'
 
     def navigate_to_home_page(self):
         self.go_to(self.HOME_PAGE_URL)
         self.driver.maximize_window()
         sleep(2)
+
+    """@Search1"""
     def click_search_bar(self):
         self.click(self.SEARCH_BAR)
         sleep(2)
@@ -35,6 +40,7 @@ class HomePage(BasePage):
         found_products = self.find_multiple(self.PRODUCTS)
         return len(found_products)
 
+    """@Filter"""
     def click_mobile(self):
         self.click(self.MOBILE_TAB)
         sleep(2)
@@ -56,6 +62,7 @@ class HomePage(BasePage):
         prices_list_int = [int(item.split(',')[0]) for item in prices_list]
         return prices_list_int
 
+    """@Test_URL"""
     def click_cart_page(self):
         self.click(self.CART_PAGE)
         sleep(2)
@@ -63,3 +70,17 @@ class HomePage(BasePage):
     def test_url(self,):
         current_url = self.current_url()
         return current_url
+
+    """@Comparatie"""
+    def click_aparat_foto_page(self):
+        self.click(self.APARAT_FOTO_PAGE)
+        sleep(2)
+    def check_comparare(self):
+        self.check_checkbox(self.COMPARARE_CHECKBOX)
+        sleep(2)
+    def click_comparatie(self):
+        self.click(self.COMPARATIE_BUTTON)
+        sleep(2)
+    def is_selected_product_displayed(self):
+        assert self.is_element_displayed(self.SELECTED_PRODUCT)
+        sleep(2)
