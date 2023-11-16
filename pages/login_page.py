@@ -14,6 +14,8 @@ class LoginPage(BasePage):
         self.driver.get(self.LOGIN_PAGE_URL)
         self.driver.maximize_window()
         sleep(2)
+
+    """@Login1"""
     def set_unregistred_email(self, text):
         self.type(self.EMAIL_INPUT, text)
         sleep(2)
@@ -28,3 +30,25 @@ class LoginPage(BasePage):
         sleep(2)
     def get_error_message_text(self):
         return self.get_text(self.ERROR_MESSAGE)
+
+    """@Login2"""
+    def set_empty_email(self, text):
+        self.type(self.EMAIL_INPUT, text)
+        sleep(2)
+    # next steps are the same as in the previous scenario
+
+    """@Login3"""
+    def set_valid_email(self, text):
+        self.type(self.EMAIL_INPUT, text)
+        sleep(2)
+    def set_valid_password(self, text):
+        self.type(self.PASSWORD_INPUT, text)
+        sleep(2)
+    # Third step is the same as in the previous scenario (click_login_button)
+    def test_url(self):
+        current_url = self.current_url()
+        return current_url
+
+
+
+
